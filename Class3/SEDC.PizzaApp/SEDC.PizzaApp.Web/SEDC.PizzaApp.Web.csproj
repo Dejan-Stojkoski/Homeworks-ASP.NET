@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Pizza\" />
+    <None Remove="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" />
+    <None Remove="Models\Domain\" />
+    <None Remove="Models\Enums\" />
+    <None Remove="Views\Order\" />
+    <None Remove="Models\ViewModels\" />
+    <None Remove="Models\Mapper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Pizza\" />
+    <Folder Include="Models\Domain\" />
+    <Folder Include="Models\Enums\" />
+    <Folder Include="Views\Order\" />
+    <Folder Include="Models\ViewModels\" />
+    <Folder Include="Models\Mapper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.17" />
+  </ItemGroup>
+</Project>
