@@ -11,7 +11,7 @@ namespace SEDC.PizzaApp.Web.Models.Mapper
             {
                 Id = pizza.Id,
                 Name = pizza.Name,
-                Price = pizza.HasExtras == true ? pizza.Price *= 10 : pizza.Price,
+                Price = pizza.HasExtras == true ? pizza.Price += 10 : pizza.Price,
                 PizzaSize = pizza.PizzaSize
             };
         }
