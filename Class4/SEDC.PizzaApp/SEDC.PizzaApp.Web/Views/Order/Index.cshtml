@@ -1,0 +1,14 @@
+﻿@model List<OrderDetailsViewModel>
+
+<div class="row">
+    <div class="col-md-5">
+        @foreach (var item in Model)
+        {
+            <h4>Order Details</h4>
+            <p>Pizza Name: @item.PizzaName</p>
+            <p>User: @item.UserFullname</p>
+            <p>Price: @item.Price</p>
+            <p>Payment Method: @item.PaymentMethod</p>
+        }
+    </div>
+</div>

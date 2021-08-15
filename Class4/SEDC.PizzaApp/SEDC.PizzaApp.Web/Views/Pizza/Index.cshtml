@@ -1,0 +1,10 @@
+﻿@model List<PizzaDetailsViewModel>
+
+<h3 class="text-center">@ViewData["Title"]</h3>
+
+<partial name="~/Views/Shared/Partial/_PizzaDetailsTable.cshtml" />
+
+@foreach (var item in Model)
+ {
+<partial name="~/Views/Shared/Partial/_PizzaDetails.cshtml" for="@item" />
+ }
