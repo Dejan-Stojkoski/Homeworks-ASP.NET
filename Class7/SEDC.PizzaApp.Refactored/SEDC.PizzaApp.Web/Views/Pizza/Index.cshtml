@@ -1,0 +1,10 @@
+﻿@model List<SEDC.PizzaApp.Domain.Models.Pizza>
+
+<div class="row">
+    <div class="col-md-5">
+        @foreach(var item in Model)
+         {
+            <p>@item.Name @item.Price</p>
+         }
+    </div>
+</div>
