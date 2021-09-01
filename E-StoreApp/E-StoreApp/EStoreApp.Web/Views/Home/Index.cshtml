@@ -1,0 +1,18 @@
+﻿@model List<ProductsViewModel>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1 class="text-center">Products</h1>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4 text-center" style="height: 20rem;">
+            <partial name="~/Views/Shared/Partial/_ProductCard.cshtml" for="@product" />
+            <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="btn btn-outline-success btn-sm col-md-4">Details</a>
+            <a asp-controller="" asp-action="" asp-route-id="@product.Id" class="btn btn-outline-danger btn-sm col-md-4">Add To Cart</a>
+        </div>
+     }
+</div>

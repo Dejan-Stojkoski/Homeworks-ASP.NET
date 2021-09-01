@@ -1,0 +1,33 @@
+﻿@model ProductDetailsViewModel
+
+<div class="row text-center">
+    <div class="col-md-6">
+        <img src="~/images/@Model.Image" alt="@Model.Name" height="320" />
+    </div>
+
+    <div class="col-md-6">
+        <div class="card" style="height: 20rem;">
+            <div class="card-body">
+                <h4 class="card-title">Details:</h4>
+                <p class="card-text" overflow:auto;">@Model.Description</p>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Price:</b> $@Model.Price</li>
+                <li class="list-group-item"><b>Rate:</b> @Model.Rate / 5</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h3 class="mt-5">Reviews (@Model.Reviews.Count)</h3>
+    @foreach (var review in Model.Reviews)
+    {
+        <div class="row border border-danger" style="height:5rem;">
+            <div class="col-md-3 my-auto text-center"><b>@review.User.FirstName @review.User.LastName</b></div>
+            <div class="col-md-9 border-left border-danger">@review.ReviewText</div>
+        </div>
+    }
+
+
+

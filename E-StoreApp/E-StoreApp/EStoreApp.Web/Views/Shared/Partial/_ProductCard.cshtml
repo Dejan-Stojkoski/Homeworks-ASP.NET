@@ -1,0 +1,9 @@
+﻿@model ProductsViewModel
+
+    <div class="card" style="height: 15rem;">
+        <div class="card-body">
+            <h4 class="card-title">@Model.Name</h4>
+            <img class="card-img" src="~/images/@Model.Image" alt="@Model.Name" height="150" />
+            <p class="font-weight-bold">Price: $@Model.Price</p>
+        </div>
+    </div>
