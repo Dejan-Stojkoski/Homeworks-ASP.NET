@@ -51,7 +51,9 @@ namespace EStoreApp.DataAccess
                         LastName = "Bobsky",
                         Address = "BobskyBob 1",
                         Phone = 123123123,
-                        Status = UserStatus.Admin
+                        Status = UserStatus.Admin,
+                        Email = "bob@gmail.com",
+                        Password = "BobBobsky"
                     },
                     new User
                     {
@@ -60,7 +62,9 @@ namespace EStoreApp.DataAccess
                         LastName = "Gregsky",
                         Address = "GregskyGreg 2",
                         Phone = 321321321,
-                        Status = UserStatus.Employee
+                        Status = UserStatus.Employee,
+                        Email = "greg@gmail.com",
+                        Password = "GregGregsky"
                     },
                     new User
                     {
@@ -69,7 +73,9 @@ namespace EStoreApp.DataAccess
                         LastName = "Jillsky",
                         Address = "JillJillsky 3",
                         Phone = 231123321,
-                        Status = UserStatus.User
+                        Status = UserStatus.User,
+                        Email = "Jill@gmail.com",
+                        Password = "JillJillsky"
                     }
                 );
 

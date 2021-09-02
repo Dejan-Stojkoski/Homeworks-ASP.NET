@@ -32,6 +32,19 @@
                         </li>
                     </ul>
                 </div>
+
+            </div>
+            <div class="float right d-flex">
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="Account" asp-action="Info" class="btn btn-outline-dark" style="width:4rem;">Login</a>
+                }
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="Account" asp-action="Info" class="btn btn-outline-warning" style="width:4rem;">@User.Identity.Name</a>
+                    <a asp-controller="Account" asp-action="Logout" class="btn btn-outline-dark ml-2 text-center" style="width:5rem;">Logout</a>
+                }
+                <a asp-controller="" asp-action="" class="btn btn-outline-danger ml-2" style="width:4rem;">Cart</a>
             </div>
         </nav>
     </header>

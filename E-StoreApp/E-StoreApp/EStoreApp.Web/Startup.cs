@@ -1,6 +1,7 @@
 ﻿using EStoreApp.Services.Helpers;
 using EStoreApp.Services.Services;
 using EStoreApp.Services.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,14 +21,17 @@ namespace EStoreApp.Web
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        { 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             DIModule.RegisterDatabase(services, Configuration.GetConnectionString("DefaultConnection"));
             DIModule.RegisterRepositories(services);
 
             services.AddTransient<IProductOrderService, ProductOrderService>();
-            
+            services.AddTransient<IUserService, UserService>();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => {});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +52,7 @@ namespace EStoreApp.Web
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
